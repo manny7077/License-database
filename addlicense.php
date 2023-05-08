@@ -10,5 +10,10 @@ if(isset($_POST['submit'])){
   $insert = "INSERT INTO licenses (license_type, description, date_activation, date_expiry) VALUES ('$license_type', '$description', '$activation_date', '$expiry_date')";
   mysqli_query($conn, $insert);
 }
+echo '<script type="text/javascript">
+          alert("License Added!");
+          window.location.href = "dashboard.php";
+        </script>';
+  exit();
 
 ?>

@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
       $row = mysqli_fetch_array($result);
       $hash = $row['password']; // Get the stored password hash from the database
       if(password_verify($password, $hash)){ // Verify the password
-         header('location:dashboard.html'); // Redirect to ticket page
+         header('location:dashboard.php'); // Redirect to ticket page
          exit;
       }else{
          echo "<script>alert('Incorrect email or password!');</script>"; // Display error as JavaScript notification

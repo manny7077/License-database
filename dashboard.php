@@ -75,7 +75,7 @@
             <h3>John Doe</h3>
           </div>
         </div>
-        <a href="#" class="log-out">
+        <a href="Index.html" class="log-out">
           <i class='bx bx-log-out'></i>
         </a>
       </div>
@@ -101,18 +101,15 @@
             </tr>
           </thead>
           <tbody>
+            <?php
+            include 'licenses.php'
+            ?>
           </tbody>
         </table>
       </div>
       <div class="form-container"></div>
   </main>
-    
-
-
-  
-
-
-  
+     
 </body>
 <script src="main.js"></script>
 </html>

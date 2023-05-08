@@ -17,8 +17,10 @@ if(isset($_POST['submit'])){
       if(password_verify($cpassword, $password)){
          $insert = "INSERT INTO users(name, email, password) VALUES('$name','$email','$password')";
          mysqli_query($conn, $insert);
-         echo "<script>alert('Registration successful!');</script>"; // JavaScript code to display successful registration notification
-         header('location:index.html');
+         echo '<script type="text/javascript">
+         alert("Registration successful!");
+         window.location.href = "Index.html";
+       </script>';
       }else{
          echo "<script>alert('Passwords do not match!');</script>"; // JavaScript code to display password mismatch notification
       }
