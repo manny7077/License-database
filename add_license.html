@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sidebar Menu</title>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav>
+    <div class="sidebar-top">
+      <span class="shrink-btn">
+        <i class='bx bx-chevron-left'></i>
+      </span>
+    </div>
+
+    <div class="sidebar-links">
+      <ul>
+        <div class="active-tab"></div>
+        <li class="tooltip-element" data-tooltip="0">
+          <a href="dashboard.html" class="active" data-active="0">
+            <div class="icon">
+              <i class='bx bx-tachometer'></i>
+              <i class='bx bxs-tachometer'></i>
+            </div>
+            <span class="link hide">Dashboard</span>
+          </a>
+        </li>
+        <li class="tooltip-element" data-tooltip="1">
+          <a href="#" data-active="1">
+            <div class="icon">
+                <i class='bx bx-x-circle'></i>
+                <i class='bx bx-x-circle'></i>
+            </div>
+            <span class="link hide">Expired Licenses</span>
+          </a>
+        </li>
+        <li class="tooltip-element" data-tooltip="2">
+          <a href="#" data-active="2">
+            <div class="icon">
+                <i class='bx bx-plus-circle'></i>
+                <i class='bx bx-plus-circle'></i>
+            </div>
+            <span class="link hide">Add License</span>
+          </a>
+        </li>
+    
+      </ul>
+
+      <h4 class="hide">Shortcuts</h4>
+
+      <ul>
+        <li class="tooltip-element" data-tooltip="1">
+          <a href="#" data-active="5">
+            <div class="icon">
+              <i class='bx bx-help-circle'></i>
+              <i class='bx bxs-help-circle'></i>
+            </div>
+            <span class="link hide">Help</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+
+    <div class="sidebar-footer">
+      <a href="#" class="account tooltip-element" data-tooltip="0">
+        <i class='bx bx-user'></i>
+      </a>
+      <div class="admin-user tooltip-element" data-tooltip="1">
+        <div class="admin-profile hide">
+          <img src="./img/face-1.png" alt="">
+          <div class="admin-info">
+            <h3>John Doe</h3>
+          </div>
+        </div>
+        <a href="#" class="log-out">
+          <i class='bx bx-log-out'></i>
+        </a>
+      </div>
+      <div class="tooltip">
+        <span class="show">John Doe</span>
+        <span>Logout</span>
+      </div>
+    </div>
+  </nav>
+
+
+  
+  <main>
+    <h1>Add New License</h1>
+    <div class="table-container">
+      <form action="addlicense.php"  method="post">
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="license_type" required>
+      
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea>
+
+        <label for="activation date">Date of Activation:</label>
+        <input type="date" id="activation" name="date_activation" required>
+      
+        <label for="expiry date">Date of Expiry:</label>
+        <input type="date" id="expiry" name="date_expiry" required>
+      
+        <button type="submit" class="btn" name="submit">Add</button>
+      </form>
+      
+    </div>
+
+  </main>
+    
+
+
+  
+
+
+  
+</body>
+<script src="main.js"></script>
+</html>
