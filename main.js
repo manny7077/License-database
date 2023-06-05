@@ -4,6 +4,7 @@ const active_tab = document.querySelector(".active-tab");
 const shortcuts = document.querySelector(".sidebar-links h4");
 const tooltip_elements = document.querySelectorAll(".tooltip-element");
 
+
 let activeIndex;
 
 shrink_btn.addEventListener("click", () => {
@@ -51,3 +52,21 @@ tooltip_elements.forEach((elem) => {
   });
 });
 
+
+const searchInput = document.getElementById('search-input');
+const licenseTableBody = document.getElementById('license-table-body');
+
+searchInput.addEventListener('input', () => {
+  const searchQuery = searchInput.value;
+
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      const searchResults = xhr.responseText;
+      licenseTableBody.innerHTML = searchResults;
+    }
+  };
+
+  xhr.open('GET', `search.php?search=${searchQuery}`);
+  xhr.send();
+});
