@@ -1,1 +1,1 @@
-My license database web application is located in the 
+My license database web application is located in the master branch.
