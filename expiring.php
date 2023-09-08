@@ -2,8 +2,11 @@
 include 'db.php';
 session_start();
 
+// Initialize the $expiringMessage variable outside of the if block
+$expiringMessage = "";
+
 // Query the database for the licenses expiring in less than 3 months
-$sql = "SELECT COUNT(*) AS num_expiring FROM licenses WHERE DATEDIFF(date_expiry, CURDATE()) < 90";
+$sql = "SELECT COUNT(*) AS num_expiring FROM licenses WHERE DATEDIFF(date_expiry, CURDATE()) > 0 AND DATEDIFF(date_expiry, CURDATE()) <= 90";
 $result = mysqli_query($conn, $sql);
 
 if ($result) {
